@@ -1,3 +1,162 @@
+# ⚖️ AWS ELB + Auto Scaling Group (ASG) Lab
+
+## 📌 Overview
+
+This project demonstrates the implementation of a **scalable and highly available architecture on AWS** using **Elastic Load Balancer (ELB)** integrated with an **Auto Scaling Group (ASG)**.
+
+The solution simulates a real-world scenario where application traffic fluctuates, requiring dynamic scaling and intelligent traffic distribution to maintain performance and reliability.
+
+---
+
+## 🧱 Solution Architecture
+
+The architecture follows a **load-balanced, auto-scaled design**:
+
+1. Users send requests to the application
+2. ELB distributes traffic across multiple EC2 instances
+3. Auto Scaling Group adjusts the number of instances based on demand
+4. Health checks ensure only healthy instances receive traffic
+
+```id="x9p2ld"
+User → ELB (Load Balancer) → EC2 Instances (ASG)
+                              ↑        ↓
+                       Scale Out   Scale In
+```
+
+---
+
+## ⚙️ Technologies Used
+
+* AWS Elastic Load Balancer (ELB - ALB/NLB)
+* AWS EC2
+* AWS Auto Scaling Group (ASG)
+* AWS CloudWatch (metrics & alarms)
+* Launch Template
+* Linux (Ubuntu)
+
+---
+
+## 🔄 Load Balancing & Scaling Strategy
+
+### 🔹 Load Balancing (ELB)
+
+* Distributes incoming traffic across multiple instances
+* Routes traffic only to healthy targets
+* Provides a single entry point for users
+
+### 🔹 Auto Scaling (ASG)
+
+* Automatically scales instances based on demand
+* Maintains:
+
+  * Minimum capacity
+  * Desired capacity
+  * Maximum capacity
+* Replaces unhealthy instances automatically
+
+### 🔹 Integration (ELB + ASG)
+
+* New instances are automatically registered in the load balancer
+* Unhealthy instances are removed from traffic
+* Ensures seamless scaling without downtime
+
+---
+
+## 🩺 Health Checks & Resilience
+
+* ELB performs health checks on instances
+* ASG uses health status to replace failed instances
+* System remains operational even during failures
+
+This combination significantly improves system resilience and fault tolerance.
+
+---
+
+## 🖥️ Environment
+
+* EC2 instances managed by ASG
+* Load Balancer configured (ALB or NLB)
+* Multi-AZ deployment (recommended)
+* Open ports:
+
+  * 22 (SSH)
+  * 80 (HTTP)
+  * 443 (HTTPS, optional)
+
+---
+
+## 📊 Simulated Results & Impact
+
+This lab demonstrates real-world DevOps benefits:
+
+* 🚀 **High Availability:** Near 100% uptime with multi-instance architecture
+* ⚡ **Performance Improvement:** Load distributed evenly across instances
+* 📈 **Scalability:** Automatic scaling during traffic spikes
+* 💰 **Cost Optimization:** Up to ~50% cost reduction by scaling down idle resources
+* 🔁 **Self-Healing:** Automatic replacement of failed instances
+* ⏱️ **Response to Load:** Scaling triggered within seconds/minutes
+
+---
+
+## 📈 DevOps & ATS Keywords
+
+AWS • ELB • Load Balancer • Auto Scaling • EC2 • Cloud Computing • High Availability • Scalability • Elasticity • CloudWatch • Monitoring • DevOps • Infrastructure • Fault Tolerance • Reliability Engineering • Distributed Systems • Traffic Distribution • Automation • Cloud Architecture • Performance Optimization
+
+---
+
+## 📈 Best Practices Applied
+
+* Horizontal scaling architecture
+* Load balancing across multiple instances
+* Multi-AZ deployment for high availability
+* Health check-based traffic routing
+* Automated infrastructure management
+
+---
+
+## 🎯 Project Goals
+
+* Understand load balancing and scaling concepts
+* Implement highly available cloud architecture
+* Simulate real-world traffic scenarios
+* Build production-ready DevOps skills
+
+---
+
+## 🚀 Future Improvements
+
+* Add HTTPS with SSL (ACM integration)
+* Implement Blue/Green deployments
+* Add monitoring dashboards (CloudWatch)
+* Automate infrastructure using Terraform (IaC)
+* Integrate with CI/CD pipeline
+
+---
+
+## 👨‍💻 Author
+
+**Jhonatan Alves**
+Aspiring Cloud & DevOps Engineer
+Focus: AWS | Scalability | High Availability
+
+---
+
+## 📬 Contact
+
+* LinkedIn: https://www.linkedin.com/in/jhonatan-alves0
+* GitHub: https://github.com/jhonnn-ny
+
+---
+
+## ⭐ Final Notes
+
+This project demonstrates a **production-grade cloud architecture pattern**, combining load balancing and auto scaling to ensure performance, resilience, and cost efficiency.
+
+It reflects real-world DevOps practices used to build **scalable, fault-tolerant systems in AWS**.
+
+Open to feedback and collaboration.
+
+
 # AWS-ELB-ASG
 Scaling and Load Balancing Your Architecture
 ## **Lab overview**
